@@ -26,3 +26,7 @@ class Product(models.Model):
     price = models.PositiveIntegerField(default=0)
     payment = models.PositiveIntegerField(default=0)
     add_date = models.DateField('Qoshilgan vaqt',auto_now_add=True)
+    brand = models.ForeignKey(Brand,on_delete=models.PROTECT,null=True,blank=True)
+
+    def __str__(self):
+        return self.title

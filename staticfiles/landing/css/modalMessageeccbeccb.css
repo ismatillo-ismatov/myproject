@@ -1,0 +1,151 @@
+.modalMessage .modal-content{
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.modalMessage.modal.modals.fade .modal-dialog{
+    width: auto;
+    max-width: 570px;
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modalMessage .modal-dialog .modal-body{
+    max-width: 570px;
+    position: relative;
+    height: auto;
+    padding: 0;
+    background: #141414 url("../img/modal-bgnd.png") no-repeat right center;
+    background-size: 90%;
+    border: 1px solid #136abb !important;
+    border-radius: 10px;
+    min-height: 235px;
+}
+
+.modalMessage .modal-dialog .modal-body .modal-close{
+    position: absolute;
+    top: 10px;
+    right: 6%;
+    color: #e9e9e9;
+    font-size: 22px;
+}
+
+.modalMessage .modal-dialog .modal-body .modal-close:hover,
+.modalMessage .modal-dialog .modal-body .modal-close:active,
+.modalMessage .modal-dialog .modal-body .modal-close:focus{
+    text-decoration: none;
+    color: #fff;
+}
+
+.modalMessage .modal-body .messageIcon{
+    width: 215px;
+    height: 216px;
+    float: left;
+    margin-right: -70px;
+    background: url("../img/message1.png") no-repeat center center;
+}
+.modalMessage .modal-body .messageIcon.icon2{
+    background: url("../img/message2.png") no-repeat center center;
+}
+
+.modalMessage .modal-body .messageIcon.icon3{
+    background: url("../img/message3.png") no-repeat center center;
+}
+
+.modalMessage .modal-body .messageIcon.icon4{
+    background: url("../img/message4.png") no-repeat center center;
+}
+.modalMessage .modal-body .messageText{
+    min-width: 320px;
+    max-width: 100%;
+    padding: 23px 23px 26px 180px;
+    margin-top: 50px;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 24px;
+}
+.modalMessage .modal-body .messageIcon + .messageText{
+    margin-left: 170px;
+}
+
+.modals .modal-dialog .modal-body .messageText button{
+    background-color: rgba(19, 106, 187, 0.439);
+    width: 360px;
+    height: 52px;
+    position: relative;
+    line-height: 52px;
+    border-width: 1px;
+    border-color: #1475c3;
+    border-style: solid;
+    border-radius: 35px;
+    font-size: 26px;
+    font-weight: 300;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    max-width: 90%;
+}
+
+.modals .modal-dialog .modal-body .messageText button:hover{
+    background-color: rgba(19, 106, 187, 0.6);
+}
+
+.modalMessage .modal-body .messageText button.success{
+    border: 2px solid #60c29f;
+    color: #60c29f;
+}
+
+.modalMessage .modal-body .messageText button.success:hover{
+    border: 2px solid green;
+    color: green;
+}
+
+.modalMessage .modal-body .messageText button.error{
+    border: 2px solid #e45d6d;
+    color: #e45d6d;
+}
+
+.modalMessage .modal-body .messageText button.error:hover{
+    border: 2px solid red;
+    color: red;
+}
+
+
+@media screen and (max-width: 580px){
+    .modalMessage .modal-dialog{
+        width: auto;
+        max-width: 100%;
+    }
+
+    .modalMessage .modal-dialog .modal-body{
+        max-width: 100%;
+        position: relative;
+        height: auto;
+        background: #141414 url(../img/modal-bgnd.png) no-repeat right center;
+        background-size: 115%;
+    }
+
+    .modalMessage .modal-body .messageIcon{
+        width: 215px;
+        height: 216px;
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: -60px;
+        position: relative;
+    }
+
+    .modalMessage .modal-body .messageText{
+        min-width: 100%;
+        max-width: 100%;
+        padding: 75px 23px 23px 30px;
+        margin-top: 0px;
+        margin-left: 0px;
+        font-size: 16px;
+        line-height: 24px;
+
+    }
+
+}
