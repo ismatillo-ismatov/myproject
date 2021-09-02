@@ -11,7 +11,7 @@
     <meta name="csrf-param" content="_csrf-frontend_and_office">
     <meta name="csrf-token" content="Gf23ABqW1eVjKn0CSbQJ3jfImhy_AVJLwamoor_jqKBfrM1YQtqhqAxrBXs8-VGkboDbdPY5GhKxm9rVz9P6zQ==">
     <meta name="theme-color" content="#060818">
-    <title>Sotuvchi.com — birinchi va yagona</title>
+    <title>Alsafia.com — birinchi va yagona</title>
 
     <!-- OG -->
     <meta property="og:type" content="website" />
@@ -55,11 +55,11 @@
                     </div>
                 </header>
                 <main>
-                    <h1>SOTUVCHI</h1>
+                    <h1>Alsafia</h1>
                     <h2>O'zbekistondagi birinchi va yetakchi CPA tarmog'i</h2>
 
-                    <a class="signup button" href="account/login.html">Tizimga kirish</a>
-                    <a class="signup button" href="webmaster/register.html">Ro'yhatdan o'tish</a>
+                    <a class="signup button" href="{% url 'blog:login' %}">Tizimga kirish</a>
+                    <a class="signup button" href="{% url 'blog:signup' %}">Ro'yhatdan o'tish</a>
                 </main>
                 <div class="pointplusline">
                     <div class="point"></div>
