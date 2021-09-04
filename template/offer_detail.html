@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product - {{offer.name}}</title>
+</head>
+<body>
+    <img width="200" height="200" src="{{product.image.url}}" alt="{{product.title}}">
+    <h1>{{product.title}}</h1>
+    <p>{{product.desc}}</p>
+    <br>
+    <br>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        <br><br>
+        <select required name="region">
+            <option value="">Viloyat</option>
+            <option value="Andijon">Andijon</option>
+            <option value="Buxoro">Buxoro</option>
+            <option value="Fargʻona">Fargʻona</option>
+            <option value="Jizzax">Jizzax</option>
+            <option value="Namangan">Namangan</option>
+            <option value="Navoiy">Navoiy</option>
+            <option value="Qashqadaryo">Qashqadaryo</option>
+            <option value="Qoraqalpogʻiston">Qoraqalpogʻiston</option>
+            <option value="Samarqand">Samarqand</option>
+            <option value="Sirdaryo">Sirdaryo</option>
+            <option value="Surxondaryo">Surxondaryo</option>
+            <option value="Toshkent">Toshkent shahri</option>
+            <option value="Toshkent viloyati">Toshkent viloyati</option>
+            <option value="Xorazm">Xorazm</option>
+        </select>
+        <input type="text" placeholder="Ismingizni kiriting" name='ism'><br><br>
+
+        <input type="tel" placeholder="Telefon Raqam" name='tel' ><br><br>
+
+        {%for msg in messages%}
+        <div style="background-color: red;width:250px;border-radius:5px;padding: 3px 10px">{{msg}}</div>
+
+        {%endfor%}
+        <input type="submit" value="Yuborish"><br><br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </form>
+</body>
+</html>

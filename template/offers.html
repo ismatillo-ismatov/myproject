@@ -1,0 +1,93 @@
+    <!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+        <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Offers</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input onkeyup="SearchFunction(this.value)" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="search_list" id="search">
+    <div class="card" id="product-list"></div>
+  </div>
+</nav>
+<script>
+  function SearchFunction(value){
+  console.log(value);
+  var search_list = document.getElementById("search");
+  if (window.XMLHttpRequest){
+  var xhttp = new XMLHttpRequest();
+  }else{
+  var xhttp = new ActiveXObject("Micrasoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function(){
+  if (xhttp.readyState === 4 && xhttp.status === 200){
+  var data = JSON.parse(this.responseText);
+  console.log(data);
+  var products_list = document.getElementById('product-list');
+  var p = '<p>'
+  for(var i = 0; i < data.length; i++){
+  p+='<p><img src="'+data[i].image+'"class="img" width="50"><a href="/detail/'+data[i].id+'">'+data[i].title+'</a>'
+  products_list.innerHTML = p;
+  search_list.style = "display:block";
+  }
+  }
+  }
+  var url = '{% url "blog:search_product" %}'
+  var url = url+"?data="+value;
+  xhttp.open('GET',url,true)
+  xhttp.send()
+  }
+  
+</script>
+<div class="row">
+{% for p in product %}
+<div class="card" style="width: 18rem;">
+  <img height="200" width="200" class="card-img-top" src="{{ p.image.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ p.title }}</h5>
+    <p class="card-text">{{ p.desc }}.</p>
+    <a href="#" class="btn btn-primary">Batafsil</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+</body>
+</html>
